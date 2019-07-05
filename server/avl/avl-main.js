@@ -2,8 +2,7 @@ const net = require('net');
 const port = 3001;
 const host = '0.0.0.0';
 
-const INIT_MOBILEID = "ID="
-const END_MOBILEID = "<"
+
 
 const server = net.createServer();
 server.listen(port, host, () => {
@@ -22,7 +21,7 @@ server.on('connection', function(sock) {
         sockets.forEach(function(sock, index, array) {
             //sock.write(sock.remoteAddress + ':' + sock.remotePort + " said " + data + '\n');
             data = data.toString()
-            const mobileID = data.substring(data.indexOf(INIT_MOBILEID)+3, data.indexOf(END_MOBILEID))
+            const mobileID = data.substring(data.indexOf(SYRUS_INIT_MOBILEID)+3, data.indexOf(SYRUS_END_MOBILEID))
             console.log("mobileID:",mobileID);
             
             sock.write(mobileID)
