@@ -17,5 +17,3 @@ SYRUS_INIT_MOBILEID = "ID="
 SYRUS_END_MOBILEID = "<"
 
 //----------------------FUNCIONES
-import { Parser } from '../server/avl/avl-parser'
-syrus = new Parser("012345678912127")
