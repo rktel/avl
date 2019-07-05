@@ -1,5 +1,12 @@
 export function Parser(pdu) {
     if (pdu && (pdu.length == 15 || (pdu[0] === ">" && pdu[pdu.length - 1] === "<"))) {
-        console.log("IS TAIP")
-     }
+        TAIP(pdu)
+    }
+}
+
+function TAIP(pdu) {
+    let mobileID = null
+    mobileID = pdu.length == 15 ? pdu : pdu.substring(pdu.indexOf(SYRUS_INIT_MOBILEID) + 3, pdu.indexOf(SYRUS_END_MOBILEID))
+    console.log(pdu);
+    
 }
