@@ -2,6 +2,9 @@ const net = require('net');
 const port = 3001;
 const host = '0.0.0.0';
 
+const INIT_MOBILEID = "ID="
+const END_MOBILEID = "<"
+
 const server = net.createServer();
 server.listen(port, host, () => {
     console.log('TCP Server is running on port ' + port + '.');
@@ -17,7 +20,12 @@ server.on('connection', function(sock) {
         console.log('DATA ' + sock.remoteAddress + ': ' + data);
         // Write the data back to all the connected, the client will receive it as data from the server
         sockets.forEach(function(sock, index, array) {
-            sock.write(sock.remoteAddress + ':' + sock.remotePort + " said " + data + '\n');
+            //sock.write(sock.remoteAddress + ':' + sock.remotePort + " said " + data + '\n');
+            data = data.toString()
+            const mobileID = data.substring(data.indexOf(INIT_MOBILEID)+3, data.indexOf(END_MOBILEID)+1)
+            console.log("mobileID:",mobileID);
+            
+            //sock.write(data)
         });
     });
 
