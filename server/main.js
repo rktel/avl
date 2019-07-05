@@ -17,4 +17,4 @@ SYRUS_INIT_MOBILEID = "ID="
 SYRUS_END_MOBILEID = "<"
 
 //----------------------FUNCIONES
-import { Parser } from './avl-parser'
+import { Parser } from '../server/avl/avl-parser'
