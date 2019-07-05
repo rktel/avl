@@ -15,7 +15,7 @@ let sockets = [];
 server.on('connection', function(sock) {
     console.log('CONNECTED: ' + sock.remoteAddress + ':' + sock.remotePort);
     sockets.push(sock);
-
+    console.log("SOCKS_5:",SOCKS_5)
     sock.on('data', function(data) {
         console.log('DATA ' + sock.remoteAddress + ': ' + data);
         // Write the data back to all the connected, the client will receive it as data from the server
