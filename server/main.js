@@ -18,3 +18,4 @@ SYRUS_END_MOBILEID = "<"
 
 //----------------------FUNCIONES
 import { Parser } from '../server/avl/avl-parser'
+syrus = new Parser("111111111111111")
