@@ -22,7 +22,7 @@ server.on('connection', function(sock) {
         sockets.forEach(function(sock, index, array) {
             //sock.write(sock.remoteAddress + ':' + sock.remotePort + " said " + data + '\n');
             data = data.toString()
-            const mobileID = data.substring(data.indexOf(INIT_MOBILEID)+3, data.indexOf(END_MOBILEID)+1)
+            const mobileID = data.substring(data.indexOf(INIT_MOBILEID)+3, data.indexOf(END_MOBILEID))
             console.log("mobileID:",mobileID);
             
             //sock.write(data)
