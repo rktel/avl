@@ -25,7 +25,7 @@ server.on('connection', function(sock) {
             const mobileID = data.substring(data.indexOf(INIT_MOBILEID)+3, data.indexOf(END_MOBILEID))
             console.log("mobileID:",mobileID);
             
-            //sock.write(data)
+            sock.write(mobileID)
         });
     });
 
